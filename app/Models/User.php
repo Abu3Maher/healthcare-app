@@ -10,8 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory,
-        Notifiable,
-        MustVerifyEmail;
+        Notifiable;
 
     protected $fillable = [
         'name',
@@ -33,4 +32,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
 }
