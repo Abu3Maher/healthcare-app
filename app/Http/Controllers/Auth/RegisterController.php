@@ -21,6 +21,6 @@ class RegisterController extends Controller
         return response([
             'message' => 'Register successfully, Please check your email to activate your account.',
             'code' => HttpStatus::OK,
-        ]);
+        ], HttpStatus::OK);
     }
 }
