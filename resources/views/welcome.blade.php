@@ -56,12 +56,12 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="{{route('index')}}" class="nav-item nav-link active">Home</a>
             <a href="{{route('about')}}" class="nav-item nav-link">About</a>
-            <a href="service.html" class="nav-item nav-link">Service</a>
+            <a href="{{route('service')}}" class="nav-item nav-link">Service</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                    <a href="feature.html" class="dropdown-item">Feature</a>
-                    <a href="team.blade.php" class="dropdown-item">Our Doctor</a>
+                    <a href="{{route('feature')}}" class="dropdown-item">Feature</a>
+                    <a href="{{route('team')}}" class="dropdown-item">Our Doctor</a>
                     <a href="appointment.html" class="dropdown-item">Appointment</a>
                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                     <a href="404.html" class="dropdown-item">404 Page</a>
@@ -80,7 +80,7 @@
 <div class="container-fluid header bg-primary p-0 mb-5">
     <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
         <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
-            <h1 class="display-4 text-white mb-5">Good Health Is The Root Of All Heppiness</h1>
+            <h1 class="display-4 text-white mb-5">Good Health Is The Root Of All Happiness</h1>
             <div class="row g-4">
                 <div class="col-sm-4">
                     <div class="border-start border-light ps-4">
