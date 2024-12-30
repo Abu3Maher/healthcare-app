@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,6 +31,5 @@ Route::post('/register', function () {
     return view('welcome');
 });
 
-Route::post('/login', function () {
-    return view('welcome');
-});
+
+Route::post('/login', LoginController::class)->name('login');
