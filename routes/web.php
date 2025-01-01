@@ -34,3 +34,7 @@ Route::get('/login', function () {
 })->name('login.view');
 
 Route::post('/login', LoginController::class)->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register.view');
