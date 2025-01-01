@@ -13,9 +13,10 @@ class RegisterController extends Controller
     public function __invoke(RegisterRequest $request)
     {
         $data = $request->validated();
+
         $user = User::query()->create($data);
 
-        SendVerifyJob::dispatch($user);
+//        SendVerifyJob::dispatch($user);
 
         return redirect()->route('login.view')->with('success', 'Registration successful! Please check your email inbox.');
     }
