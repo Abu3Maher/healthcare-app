@@ -17,16 +17,12 @@ class LoginController extends Controller
         if (auth('web')->attempt($data, true)) {
             $user = auth('web')->user();
 
-            return response([
+            return redirect()->route('dashboard')->with([
                 'message' => 'Welcome, ' . $user->name,
-                'code' => HttpStatus::OK,
-                'data' => new LoginResource($user),
-            ], HttpStatus::OK);
+                'code' => HttpStatus::OK
+            ]);
         }
 
-        return response([
-            'message' => 'Incorrect email or password. Please verify your credentials.',
-            'code' => HttpStatus::BAD_REQUEST
-        ], HttpStatus::BAD_REQUEST);
+        return redirect()->back()->with('error', 'Incorrect username or password. Please verify your credentials.');
     }
 }
