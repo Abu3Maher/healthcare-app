@@ -38,3 +38,6 @@ Route::post('/login', LoginController::class)->name('login');
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register.view');
+
+Route::post('/register', RegisterController::class)
+    ->name('register');
