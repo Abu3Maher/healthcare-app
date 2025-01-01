@@ -39,5 +39,4 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register.view');
 
-Route::post('/register', RegisterController::class)
-    ->name('register');
+Route::post('/register', RegisterController::class)->name('register');
