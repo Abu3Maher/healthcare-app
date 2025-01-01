@@ -29,5 +29,8 @@ Route::get('/service', function () {
 })->name('service');
 
 
-Route::post('/register', RegisterController::class)->name('register');
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login.view');
+
 Route::post('/login', LoginController::class)->name('login');
