@@ -39,6 +39,7 @@ class RegisterRequest extends FormRequest
             ],
             'role' => [
                 'required',
+                Rule::in(['admin', 'doctor', 'patient']),
             ],
             'name' => [
                 'required',
@@ -51,16 +52,18 @@ class RegisterRequest extends FormRequest
     public function validationData()
     {
         $data = $this->all();
+        $username = strtolower(trim($data['name']));
+        $username = preg_replace('/[^a-z0-9_]/', '', str_replace(' ', '', $username));
+
         do {
-            $username = strtolower(trim($data['name']));
-            $username = preg_replace('/[^a-z0-9_]/', '', str_replace(' ', '_', $username));
+            $username = $username . rand(100, 999);
 
-            $existingUsername = User::query()->where('username', $username)->first();
-
+            $existingUsername = User::query()
+                ->where('username', $username)
+                ->first();
         } while ($existingUsername);
 
         $data['username'] = $username;
-
         return $data;
     }
 }
