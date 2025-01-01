@@ -107,8 +107,9 @@
             <label for="role" class="form-label fw-medium" style="color: #555;">Role</label>
             <select class="form-select shadow-sm @error('role') is-invalid @enderror" id="role" name="role" required>
                 <option value="" disabled selected>Select your role</option>
-                <option value="user" {{ old('role') == 'user' ? 'selected' : '' }}>User</option>
                 <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+                <option value="doctor" {{ old('role') == 'doctor' ? 'selected' : '' }}>User</option>
+                <option value="patient" {{ old('role') == 'patient' ? 'selected' : '' }}>Admin</option>
             </select>
             @error('role')
             <div class="invalid-feedback">{{ $message }}</div>
