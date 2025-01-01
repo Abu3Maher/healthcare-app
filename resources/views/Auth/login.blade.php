@@ -68,15 +68,6 @@
                    required>
         </div>
 
-        <div class="mb-3">
-            <label for="name" class="form-label fw-medium" style="color: #555;">Name</label>
-            <input type="text" class="form-control shadow-sm" id="name" name="name" placeholder="Enter your name"
-                   required>
-            @error('name')
-            <div class="text-danger mt-1">{{ $message }}</div>
-            @enderror
-        </div>
-
         <button type="submit" class="btn btn-primary w-100">Login</button>
 
     </form>
